@@ -1,0 +1,23 @@
+{
+  "name": "creative-index",
+  "version": "0.1.0",
+  "private": true,
+  "dependencies": {
+    "axios": "^0.18.0",
+    "babel": "^6.23.0",
+    "prop-types": "^15.6.2",
+    "react": "^16.4.1",
+    "react-axios": "^2.0.0",
+    "react-dom": "^16.4.1",
+    "react-redux": "^5.0.7",
+    "react-request": "^3.0.1",
+    "react-scripts": "1.1.4",
+    "redux-devtools": "^3.4.1"
+  },
+  "scripts": {
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test --env=jsdom",
+    "eject": "react-scripts eject"
+  }
+}
