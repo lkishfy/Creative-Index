@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
-import './App.css';
-const API_KEY_AIRTABLE = ;
+import Card from './Components/Card/';
+import Grid from './Layouts/Grid';
+
+const API_KEY_AIRTABLE = "";
 
 class App extends Component {
   constructor(props) {
@@ -25,11 +27,7 @@ class App extends Component {
         <div className="grid-container">
             {
               records.map((content, idx) => (
-                <div key={idx} className={"grid-item item" + idx}>
-                  <header className="grid-item-header">{content.fields['Title']}</header>
-                  <body className="grid-item-body">{content.fields['Content']}</body>
-                  <footer className="grid-item-footer">{content.fields['Date']}</footer>
-                </div>
+                <Card header={content.fields['Title']} body={content.fields['Content']} footer={content.fields['Date']} idx={idx} />
               ))
             }
         </div>
