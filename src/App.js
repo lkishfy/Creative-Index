@@ -1,7 +1,8 @@
 import React, { Component } from 'react';
-import './App.css';
 import Card from './Components/Card/';
-const API_KEY_AIRTABLE = "keyuR0vayQwxwRphe";
+import Grid from './Layouts/Grid';
+
+const API_KEY_AIRTABLE = "";
 
 class App extends Component {
   constructor(props) {
