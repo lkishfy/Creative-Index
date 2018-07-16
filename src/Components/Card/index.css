@@ -1,0 +1,28 @@
+.card {
+    background-color: #fff;
+    text-align: center;
+    padding: 2rem;
+    overflow: hidden;
+    text-align: left;
+    padding: 2rem;
+}
+
+.card > .card-header {
+    font-size: 1.25rem;
+    border-bottom: 1px solid #f2f2f2;
+    margin-bottom: 1rem;
+    padding-bottom: .5rem;
+}
+
+.card > .card-body {
+    font-size: 1rem;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    max-height: 10rem;
+}
+
+.card > .card-footer {
+    text-align: right;
+    margin-top: 1rem;
+    font-size: .75rem;
+}
