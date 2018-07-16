@@ -1,24 +1,36 @@
-.App {
-  text-align: center;
-}
-
 .grid-container {
   display: grid;
   grid-template-columns: auto auto auto;
-  grid-gap: 10px;
-  background-color: #2196F3;
-  padding: 10px;
+  grid-gap: 2rem;
+  background-color: #f2f2f2;
+  padding: 2rem;
 }
-.grid-container > div {
-  background-color: rgba(255, 255, 255, 0.8);
-  text-align: center;
-  padding: 20px 0;
-  font-size: 30px;
+
+.grid-container > .grid-item {
+    background-color: #fff;
+    text-align: center;
+    padding: 2rem;
+    overflow: hidden;
+    text-align: left;
+    padding: 2rem;
 }
-.item1 {
-  grid-column-start: 1;
-  grid-column-end: 3;
+
+.grid-container > .grid-item > .grid-item-header {
+    font-size: 1.25rem;
+    border-bottom: 1px solid #f2f2f2;
+    margin-bottom: 1rem;
+    padding-bottom: .5rem;
 }
-.ShowImage{
-  
+
+.grid-container > .grid-item > .grid-item-body {
+    font-size: 1rem;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    max-height: 10rem;
+}
+
+.grid-container > .grid-item > .grid-item-footer {
+    text-align: right;
+    margin-top: 1rem;
+    font-size: .75rem;
 }
