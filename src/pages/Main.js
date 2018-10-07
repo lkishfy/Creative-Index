@@ -30,10 +30,15 @@ class Main extends Component {
       <div className="grid-container">
         {
           _.map(this.props.ideas.ideas.records, (idea, idx) => (
-            <Card header={idea.fields['Title']} body={idea.fields['Content']} footer={idea.fields['Date']} idx={idx} />
+            <Card
+              header={idea.fields['Title']}
+              body={idea.fields['Content']}
+              footer={idea.fields['Date']}
+              idx={idx}
+              key={idx}
+            />
           ))
         }
-        { console.log(this.props.ideas.ideas.records) }
       </div>
       );
     }
