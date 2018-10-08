@@ -19,6 +19,7 @@
   },
   "devDependencies": {
     "ajv-keywords": "^3.2.0",
+    "dotenv": "^6.0.0",
     "lodash": "^4.17.11",
     "react-axios": "^2.0.0",
     "react-redux": "^5.0.7",
