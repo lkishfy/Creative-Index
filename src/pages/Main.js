@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import Card from '../Components/Card/';
 import { Button } from 'reactstrap';
 import { connect } from 'react-redux';
-import { fetchIdeas } from '../redux/ActionCreators';
+import { fetchIdeas, sortIdeas } from '../redux/ActionCreators';
 import _ from 'lodash';
 import './index.css';
 
@@ -14,22 +14,44 @@ const mapStateToProps = state => {
 
 const mapDispatchToProps = (dispatch) => ({
   fetchIdeas: () => {dispatch(fetchIdeas())}
+  , sortIdeas: (sortBy) => {dispatch(sortIdeas(sortBy))}
 });
 
 class Main extends Component {
+
+  constructor(props) {
+    super(props);
+    this.state = {
+      sortBy: 'desc'
+    }
+  }
 
   componentDidMount() {
     this.props.fetchIdeas();
   }
 
   onSort = () => {
-    console.log("Sorted");
+    if (this.state.sortBy === 'desc') {
+      this.setState({ sortBy: 'asc' });
+    } else {
+      this.setState({ sortBy: 'desc' });
+    }
+    console.log(this.state.sortBy);
+    this.props.sortIdeas(this.state.sortBy);
   }
 
   render() {
     return (
       <div>
-        <Button color="primary" onClick={this.onSort}>Sort</Button>
+        <Button color="primary" onClick={this.onSort}>
+         {
+           (this.state.sortBy === 'desc') ? (
+             'Sort Up'
+           ) : (
+             'Sort Down'
+           )
+         }
+        </Button>
         <div className="grid-container">
           {
             _.map(this.props.ideas.ideas.records, (idea, idx) => (
