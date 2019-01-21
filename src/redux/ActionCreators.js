@@ -10,6 +10,13 @@ export const fetchIdeas = () => (dispatch) => {
     .then(ideas => dispatch(addIdeas(ideas)));
 }
 
+export const sortIdeas = () => (dispatch) => {
+  return fetch(baseUrl + API_KEY_AIRTABLE + `&sort[0][field]=Date&sort[0][direction]=desc`)
+    /** TODO set up error catching */
+    .then(response => response.json())
+    .then(ideas => dispatch(addIdeas(ideas)));
+}
+
 export const addIdeas = (ideas) => ({
   type: ActionTypes.ADD_IDEAS
   , payload: ideas
