@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import Card from '../Components/Card/';
+import { Button } from 'reactstrap';
 import { connect } from 'react-redux';
 import { fetchIdeas } from '../redux/ActionCreators';
 import _ from 'lodash';
@@ -25,20 +26,27 @@ class Main extends Component {
     this.props.fetchIdeas();
   }
 
+  onSort = () => {
+    console.log("Sorted");
+  }
+
   render() {
     return (
-      <div className="grid-container">
-        {
-          _.map(this.props.ideas.ideas.records, (idea, idx) => (
-            <Card
-              header={idea.fields['Title']}
-              body={idea.fields['Content']}
-              footer={idea.fields['Date']}
-              idx={idx}
-              key={idx}
-            />
-          ))
-        }
+      <div>
+        <Button color="primary" onClick={this.onSort}>Sort</Button>
+        <div className="grid-container">
+          {
+            _.map(this.props.ideas.ideas.records, (idea, idx) => (
+              <Card
+                header={idea.fields['Title']}
+                body={idea.fields['Content']}
+                footer={idea.fields['Date']}
+                idx={idx}
+                key={idx}
+              />
+            ))
+          }
+        </div>
       </div>
       );
     }
