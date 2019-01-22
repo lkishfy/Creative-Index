@@ -1,7 +1,23 @@
 .grid-container {
   display: grid;
-  grid-template-columns: auto auto auto;
-  grid-gap: 2rem;
-  background-color: #f2f2f2;
-  padding: 2rem;
+  grid-template-columns: auto auto;
+  grid-gap: 6rem;
+  background-color: #fff;
+  padding: 4rem;
+}
+
+body {
+  font-size: 16px;
+  font-family: adobe-caslon-pro,serif;
+  font-weight: 500;
+  font-style: normal;
+}
+
+.btn {
+  padding-bottom: 0;
+}
+
+.btn-primary {
+  padding-bottom: 0;
+  background-color: #0300FF;
 }

@@ -1,28 +1,36 @@
 .card {
-    background-color: #fff;
-    text-align: center;
-    padding: 2rem;
-    overflow: hidden;
-    text-align: left;
-    padding: 2rem;
+  text-align: center;
+  overflow: hidden;
+  text-align: left;
+  border: none;
+  min-height: 12em;
 }
 
 .card > .card-header {
-    font-size: 1.25rem;
-    border-bottom: 1px solid #f2f2f2;
-    margin-bottom: 1rem;
-    padding-bottom: .5rem;
+  background-color: #fff;
+  border: none;
+  font-family: ratio, sans-serif;
+  font-weight: 400;
+  font-style: normal;
+  padding-bottom: 0;
 }
 
 .card > .card-body {
-    font-size: 1rem;
-    overflow: hidden;
-    text-overflow: ellipsis;
-    max-height: 10rem;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  max-height: 10rem;
+  font-size: 1.5em;
+  padding-top: .5em;
 }
 
 .card > .card-footer {
-    text-align: right;
-    margin-top: 1rem;
-    font-size: .75rem;
+  text-align: right;
+  margin-top: 1rem;
+  font-size: .75rem;
+  background-color: #fff;
+  border: none;
+}
+
+.blue {
+  color: #0300FF;
 }

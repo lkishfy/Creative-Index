@@ -6,9 +6,11 @@ class Card extends Component {
   render() {
     return (
       <div key={this.props.idx} className={"card card-" + this.props.idx}>
-        <header className="card-header">{this.props.header}</header>
+        <header className="card-header d-flex justify-content-between">
+          <div className="align-left blue text-uppercase pr-2">{this.props.header}</div>
+          <div className="align-right text-nowrap">{this.props.date}</div>
+        </header>
         <body className="card-body">{this.props.body}</body>
-        <footer className="card-footer">{this.props.footer}</footer>
       </div>
     );
   }
@@ -20,7 +22,7 @@ Card.PropTypes = {
   /* The body of the card */
   , body: PropTypes.string
   /* The footer of the card */
-  , footer: PropTypes.string
+  , date: PropTypes.string
   /* The index of the card */
   , idx: PropTypes.number
 }

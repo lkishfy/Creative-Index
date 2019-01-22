@@ -4,6 +4,7 @@ import { Button } from 'reactstrap';
 import { connect } from 'react-redux';
 import { fetchIdeas, sortIdeas } from '../redux/ActionCreators';
 import _ from 'lodash';
+import moment from 'moment';
 import './index.css';
 
 const mapStateToProps = state => {
@@ -43,22 +44,24 @@ class Main extends Component {
   render() {
     return (
       <div>
-        <Button color="primary" onClick={this.onSort}>
-         {
-           (this.state.sortBy === 'desc') ? (
-             'Sort Up'
-           ) : (
-             'Sort Down'
-           )
-         }
-        </Button>
+        <div className="d-flex justify-content-end pt-4 pr-4">
+          <Button color="primary" onClick={this.onSort}>
+           {
+             (this.state.sortBy === 'desc') ? (
+               'Sort Up'
+             ) : (
+               'Sort Down'
+             )
+           }
+          </Button>
+        </div>
         <div className="grid-container">
           {
             _.map(this.props.ideas.ideas.records, (idea, idx) => (
               <Card
-                header={idea.fields['Title']}
+                header={idea.fields['Title'] == 'No Title' ? null : idea.fields['Title']}
                 body={idea.fields['Content']}
-                footer={idea.fields['Date']}
+                date={moment(idea.fields['Date']).format('MMMM Do, YYYY')}
                 idx={idx}
                 key={idx}
               />
